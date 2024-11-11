@@ -13,55 +13,55 @@ program
         .then(response => {
             for(let i = 0;i < response.data.length;i++){
                 if (response.data[i].type == "IssuesEvent"){
-                    console.log(`- ${response.data[i].payload.action} an issue in ${response.data[i].repo.name}`)
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} an issue in ${response.data[i].repo.name}`)
                 }
                 else if (response.data[i].type == "CommitCommentEvent"){
-                    console.log(`- commented on a commit in  ${response.data[i].repo.name}`) 
+                    console.log(`- Commented on a commit in  ${response.data[i].repo.name}`) 
                     
                 }
                 else if (response.data[i].type == "CreateEvent"){
-                    console.log(`- created a ${response.data[i].payload.ref_type} in the ${response.data[i].payload.master_branch} branch of ${response.data[i].repo.name}`) 
+                    console.log(`- Created a ${response.data[i].payload.ref_type} in the ${response.data[i].payload.master_branch} branch of ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "DeleteEvent"){
-                    console.log(`- deleted a ${response.data[i].payload.ref_type} in ${response.data[i].repo.name}`) 
+                    console.log(`- Deleted a ${response.data[i].payload.ref_type} in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "ForkEvent"){
-                    console.log(`- forked ${response.data[i].repo.name}`) 
+                    console.log(`- Forked ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "GollumEvent"){
-                    console.log(`- updated wiki page in ${response.data[i].repo.name}`) 
+                    console.log(`- Updated wiki page in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "IssueCommentEvent"){
-                    console.log(`- ${response.data[i].payload.action} a comment on an issue in ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a comment on an issue in ${response.data[i].repo.name}`) 
                     
                 }
                 else if (response.data[i].type == "MemberEvent"){
-                    console.log(`- ${response.data[i].payload.action} a collaborator to ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a collaborator to ${response.data[i].repo.name}`) 
                     
                 }
                 else if (response.data[i].type == "PublicEvent"){
-                    console.log(`- made ${response.data[i].repo.name} public`) 
+                    console.log(`- Made ${response.data[i].repo.name} public`) 
                 }
                 else if (response.data[i].type == "PullRequestEvent"){
-                    console.log(`- ${response.data[i].payload.action} a pull request in ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a pull request in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "PullRequestReviewEvent"){
-                    console.log(`- ${response.data[i].payload.action} a pull request review in ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a pull request review in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "PullRequestReviewCommentEvent"){
-                    console.log(`- commented on a pull request review in ${response.data[i].repo.name}`) 
+                    console.log(`- Commented on a pull request review in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "PullRequestReviewThreadEvent"){
-                    console.log(`- ${response.data[i].payload.action} a comment thread on a pull request in ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a comment thread on a pull request in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "PushEvent"){
-                    console.log(`- pushed ${response.data[i].payload.size} ${response.data[i].payload.size > 1 ? "commits":"commit"} to ${response.data[i].repo.name}`) 
+                    console.log(`- Pushed ${response.data[i].payload.size} ${response.data[i].payload.size > 1 ? "commits":"commit"} to ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "ReleaseEvent"){
-                    console.log(`- ${response.data[i].payload.action} a release in ${response.data[i].repo.name}`) 
+                    console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} a release in ${response.data[i].repo.name}`) 
                 }
                 else if (response.data[i].type == "WatchEvent"){
-                    console.log(`- starred ${response.data[i].repo.name}`) 
+                    console.log(`- Starred ${response.data[i].repo.name}`) 
                 }
             }
         })
