@@ -11,7 +11,7 @@ program
     .action((username) => {
         axios.get(`https://api.github.com/users/${username}/events`)
         .then(response => {
-            for(let i = 0;i <= response.data.length;i++){
+            for(let i = 0;i < response.data.length;i++){
                 if (response.data[i].type == "IssuesEvent"){
                     console.log(`- ${response.data[i].payload.action} an issue in ${response.data[i].repo.name}`)
                 }
