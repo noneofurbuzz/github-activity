@@ -17,7 +17,7 @@ cd github-activity
 
 ## Usage
 
-- Run the following command to list the recent activity of a github user
+ Run the following command to list the recent activity of a github user
    ```bash
    # github-activity <username>
    github-activity noneofurbuzz
