@@ -11,6 +11,10 @@ program
     .action((username) => {
         axios.get(`https://api.github.com/users/${username}/events`)
         .then(response => {
+            if (response.data.length == 0){
+                console.log("No recent activity")
+            }
+            else{
             for(let i = 0;i < response.data.length;i++){
                 if (response.data[i].type == "IssuesEvent"){
                     console.log(`- ${response.data[i].payload.action.charAt(0).toUpperCase() + response.data[i].payload.action.slice(1)} an issue in ${response.data[i].repo.name}`)
@@ -64,9 +68,16 @@ program
                     console.log(`- Starred ${response.data[i].repo.name}`) 
                 }
             }
+                
+            }
         })
         .catch(error => {
-            console.error(error)
+            if (error.status == "404"){
+                console.log("\x1b[31m",`Github user not found {username:${username}}`)
+            }
+            else{
+                console.log("\x1b[31m",`Error fetching data: ${error.status}`)
+            }
         })
     })
 program.parse(process.argv)
