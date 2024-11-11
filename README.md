@@ -14,7 +14,14 @@ git clone https://github.com/noneofurbuzz/github-activity.git
 # navigate to the project directory
 cd github-activity
 ```
-
+### Install necessary dependecies
+```bash
+npm install
+```
+### Link globally
+```bash
+npm link
+```
 ## Usage
 
  Run the following command to list the recent activity of a github user
