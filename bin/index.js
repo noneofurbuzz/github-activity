@@ -73,10 +73,10 @@ program
         })
         .catch(error => {
             if (error.status == "404"){
-                console.log("\x1b[31m",`Github user not found {username:${username}}`)
+                console.log(`\x1b[31m Github user not found {username:${username}}\x1b[0m`)
             }
             else{
-                console.log("\x1b[31m",`Error fetching data: ${error.status}`)
+                console.log(`\x1b[31m Error fetching data: ${error.status}\x1b[0m`)
             }
         })
     })
