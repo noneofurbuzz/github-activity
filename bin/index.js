@@ -68,7 +68,7 @@ program
                     console.log(`- Starred ${response.data[i].repo.name}`) 
                 }
             }
-                
+            console.log(`\nHere's a link to see more about the user: https://github.com/${username}`)
             }
         })
         .catch(error => {
